@@ -2,15 +2,16 @@ spring:
   application:
     name: wedding
   datasource:
-    url: jdbc:postgresql://ec2-35-168-122-84.compute-1.amazonaws.com/d8hb560iit3f5p
-    username: dpvzatwmtoxwbs
-    password: e57beacc9ee5f5490f8c94723640b6714f30d30c383d7230f4064f21f198dbc0
-  jpa :
+    url: jdbc:postgresql://cet8gijgk7sjl9.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/daff9jrtkd4f0i
+    username: ue3acac1n3svpo
+    password: pb94ba61ca4e9995700443ec5b2375c1949fd410fc44e5257f92cb96ff60c4eed
+  jpa:
     properties:
-  hibernate:
-    dialect: org.hibernate.dialect.PostgreSQLDialect
-  connection:
-    driver_class: org.postgresql.Driver
-  format_sql: false
-  ddl-auto: update
-  show-sql: false
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        connection:
+          driver_class: org.postgresql.Driver
+        format_sql: false
+    hibernate:
+      ddl-auto: update
+    show-sql: false

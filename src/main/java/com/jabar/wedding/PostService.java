@@ -1,14 +1,14 @@
 package com.jabar.wedding;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-@Log4j
+@Slf4j
 public class PostService {
     private final PostRepository repository;
 
