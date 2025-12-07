@@ -2,10 +2,12 @@ package com.jabar.wedding;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -23,8 +25,10 @@ public class PostService {
         return repository.save(entity);
     }
 
-    public List<Post> getAllPost() {
-        return repository.findAll();
+    public Page<Post> getAllPost(int pageNo, int pageSize) {
+        var sort = Sort.by(Sort.Direction.DESC, "createdAt");
+        var pageable = PageRequest.of(pageNo, pageSize, sort);
+        return repository.findAll(pageable);
     }
 
     public Post getPostById(Long id) {

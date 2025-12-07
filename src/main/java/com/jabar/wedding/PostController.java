@@ -1,6 +1,7 @@
 package com.jabar.wedding;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +18,9 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> getAll() {
-        return service.getAllPost();
+    public Page<Post> getAll(@RequestParam(defaultValue = "0") int pageNo,
+                             @RequestParam(defaultValue = "10") int pageSize) {
+        return service.getAllPost(pageNo, pageSize);
     }
 
     @GetMapping("/{id}")
