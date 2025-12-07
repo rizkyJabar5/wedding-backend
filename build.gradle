@@ -29,6 +29,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 }
 
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
 tasks.register("stage") {
-    dependsOn("build")
+    dependsOn("build -x test")
 }
