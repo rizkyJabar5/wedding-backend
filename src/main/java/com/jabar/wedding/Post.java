@@ -1,12 +1,10 @@
 package com.jabar.wedding;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
@@ -15,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Post {
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private Boolean status;
