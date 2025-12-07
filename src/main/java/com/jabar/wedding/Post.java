@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
@@ -19,5 +21,5 @@ public class Post {
     private Boolean status;
     @Lob
     private String comment;
-
+    private LocalDateTime createdAt;
 }

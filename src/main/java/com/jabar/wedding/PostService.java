@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -13,10 +14,12 @@ public class PostService {
     private final PostRepository repository;
 
     public Post save(PostDto request) {
+        log.info("Request: {}", request);
         var entity = new Post();
         entity.setName(request.name());
         entity.setStatus(request.status());
         entity.setComment(request.comment());
+        entity.setCreatedAt(LocalDateTime.now());
         return repository.save(entity);
     }
 
