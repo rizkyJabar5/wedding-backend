@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @RequiredArgsConstructor
 @Service
@@ -21,7 +22,7 @@ public class PostService {
         entity.setName(request.name());
         entity.setStatus(request.status());
         entity.setComment(request.comment());
-        entity.setCreatedAt(LocalDateTime.now());
+        entity.setCreatedAt(LocalDateTime.now(ZoneId.of("Asia/Jakarta")));
         return repository.save(entity);
     }
 
