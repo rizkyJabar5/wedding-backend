@@ -34,5 +34,5 @@ tasks.named('test') {
 }
 
 tasks.register("stage") {
-    dependsOn("build -x test")
+    dependsOn("build")
 }
