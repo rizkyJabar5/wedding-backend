@@ -12,7 +12,7 @@ import java.util.List;
 public class PostService {
     private final PostRepository repository;
 
-    public Post save(PostDto request){
+    public Post save(PostDto request) {
         var entity = new Post();
         entity.setName(request.name());
         entity.setStatus(request.status());
@@ -26,6 +26,6 @@ public class PostService {
 
     public Post getPostById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() ->new RuntimeException("Comment not found"));
+                .orElseThrow(() -> new RuntimeException("Comment not found"));
     }
 }
