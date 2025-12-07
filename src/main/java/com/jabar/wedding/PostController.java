@@ -12,7 +12,7 @@ public class PostController {
     private final PostService service;
 
     @PostMapping
-    public Post save(PostDto request) {
+    public Post save(@RequestBody PostDto request) {
         return service.save(request);
     }
 
