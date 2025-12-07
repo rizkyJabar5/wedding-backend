@@ -34,5 +34,5 @@ tasks.named('test') {
 }
 
 tasks.register("stage") {
-    dependsOn("clean", "build")
+    dependsOn("clean", "build", "application")
 }
